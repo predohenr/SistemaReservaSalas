@@ -21,11 +21,9 @@ public class RepositorioClientes {
 		Cliente b = Cliente.criarCliente();
 		Cliente[] clientes = {a, b};
 		RepositorioClientes repo = new RepositorioClientes(clientes);
-		System.out.println(repo.consultar("2"));
+		System.out.println(repo.consultar("1"));
 	}
 }
-
-
 
 
 
