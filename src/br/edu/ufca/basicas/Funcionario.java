@@ -1,5 +1,4 @@
-package br.edu.ufca.funcionario;
-import br.edu.ufca.cliente.Cliente;
+package br.edu.ufca.basicas;
 
 public class Funcionario extends Cliente{
 	public Funcionario(String _nome, String _cpf) {

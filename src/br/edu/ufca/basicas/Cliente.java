@@ -1,4 +1,4 @@
-package br.edu.ufca.cliente;
+package br.edu.ufca.basicas;
 
 import java.io.BufferedReader;
 import java.io.IOException;
