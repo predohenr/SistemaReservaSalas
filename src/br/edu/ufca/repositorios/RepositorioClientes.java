@@ -20,7 +20,7 @@ public class RepositorioClientes implements Repositorio{
 	}
 
 	@Override
-	public void removerCliente(String cpf) {
+	public void remover(String cpf) {
 		Cliente cliente = retornaCliente(cpf);
 		if (cliente!=null) {
 			this.clientes.remove(cliente);
@@ -45,38 +45,7 @@ public class RepositorioClientes implements Repositorio{
 		clientes.add(b);
 		RepositorioClientes repo = new RepositorioClientes(clientes);
 		System.out.println(repo.consultar("2"));
-		repo.removerCliente("2");
+		repo.remover("2");
 		System.out.println(repo.consultar("2"));
 	}
 }
-
-
-
-
-
-
-
-
-
-/*
-	import java.io.BufferedReader;
-	import java.io.IOException;
-	import java.io.InputStreamReader;
-	
-	public boolean consultar() {
-		System.out.print("Digite o cpf a ser buscado: "); 
-	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
-	    String cpf = null;
-	    try { 
-	    	cpf = br.readLine(); 
-	    } catch (IOException ioe) { 
-	    	System.out.println("Erro!"); 
-	        System.exit(1); 
-	    } 
-		for (int i = 0; i<this.clientes.length; i++) {
-			if(cpf.equals(this.clientes[i].getCpf())) {
-				return true;
-			}
-		}
-		return false;
- */
