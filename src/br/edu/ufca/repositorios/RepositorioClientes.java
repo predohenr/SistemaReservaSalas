@@ -1,15 +1,16 @@
 package br.edu.ufca.repositorios;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+
 import br.edu.ufca.basicas.Cliente;
 
-public class RepositorioClientes implements Repositorio{
-	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-	RepositorioClientes(ArrayList<Cliente> clientes) {
-		this.clientes = clientes;
+public class RepositorioClientes implements Serializable{
+	private static final long serialVersionUID = 1L;
+	public ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+	public RepositorioClientes() {
 	}
 	
-	@Override
 	public boolean consultar(String cpf) {	
 		for (int i = 0; i<this.clientes.size(); i++) {
 			if(cpf.equals(this.clientes.get(i).getCpf())) {
@@ -19,12 +20,7 @@ public class RepositorioClientes implements Repositorio{
 		return false;
 	}
 
-	@Override
 	public void remover(String cpf) {
-		Cliente cliente = retornaCliente(cpf);
-		if (cliente!=null) {
-			this.clientes.remove(cliente);
-		}
 	 }
 	
 	Cliente retornaCliente(String cpf) {	
@@ -34,18 +30,5 @@ public class RepositorioClientes implements Repositorio{
 			}
 		}
 		return null;
-	}
-	 
-	//teste
-	public static void main(String[] args) {
-		Cliente a = Cliente.criarCliente();
-		Cliente b = Cliente.criarCliente();
-		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-		clientes.add(a);
-		clientes.add(b);
-		RepositorioClientes repo = new RepositorioClientes(clientes);
-		System.out.println(repo.consultar("2"));
-		repo.remover("2");
-		System.out.println(repo.consultar("2"));
 	}
 }

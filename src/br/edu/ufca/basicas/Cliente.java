@@ -1,9 +1,9 @@
 package br.edu.ufca.basicas;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String cpf;
 	private int permissao = 0;
@@ -24,22 +24,5 @@ public class Cliente {
 	}
 	public int getPermissao() {
 		return permissao;
-	}
-
-	public static Cliente criarCliente() {
-	    String info = null, nome = null, cpf = null;
-	    try { 
-			System.out.print("Entre com o nome e o cpf no formato <NOME>,<CPF> (sem espacamento): "); 
-		    BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
-	    	info = br.readLine(); 
-		    String[] arrSplit = info.split(",");
-		    nome = arrSplit[0];
-		    cpf = arrSplit[1];
-	    } catch (IOException ioe) { 
-	    	System.out.println("Erro ao ler as informações"); 
-	        System.exit(1); 
-	    } 
-		Cliente cliente = new Cliente(nome, cpf);
-		return cliente;
 	}
 }

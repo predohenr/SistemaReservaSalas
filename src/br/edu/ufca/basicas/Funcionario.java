@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Funcionario extends Cliente{
+	private static final long serialVersionUID = 1L;
+
 	public Funcionario(String _nome, String _cpf) {
 		super(_nome, _cpf);
 	}
